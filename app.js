@@ -3,6 +3,7 @@ const express = require("express");
 const app = express();
 const tourRouter = require("./routes/tourRouter");
 const userRouter = require("./routes/userRouter");
+const aiRoutes = require("./routes/aiRoutes");
 const { unknownEndpoint } = require("./middleware/customMiddleware");
 
 const morgan = require("morgan");
