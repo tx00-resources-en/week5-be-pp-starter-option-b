@@ -4,9 +4,11 @@
 
 In this paired activity, you will collaboratively migrate your existing MVC API to use MongoDB. You'll start with in-memory data and progressively move to a real database, learning environment variables, error handling, and cloud deployment along the way.
 
+<!-- 
 There are two parts to this lab:
 - **Part 1: MVC with Database** (required for all students)
 - **Part 2: AI Integration** (primarily for students implementing AI in their group projects)
+-->
 
 ---
 
