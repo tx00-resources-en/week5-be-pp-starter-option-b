@@ -30,3 +30,4 @@ mongoose
   });
 
 module.exports = app;
+

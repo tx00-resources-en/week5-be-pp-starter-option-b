@@ -43,3 +43,4 @@ const generateTourSuggestion = async (req, res) => {
 };
 
 module.exports = generateTourSuggestion;
+

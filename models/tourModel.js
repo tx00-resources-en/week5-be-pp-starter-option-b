@@ -144,3 +144,4 @@ const Tour = {
 };
 
 module.exports = Tour;
+
