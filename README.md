@@ -192,8 +192,8 @@ Before making any changes, verify the existing endpoints work:
 
 **Postman tests:**
 
-- `GET http://localhost:4000/tours` → expect `200` and an array of tours
-- `GET http://localhost:4000/users` → expect `200` and an array of users
+- `GET http://localhost:4000/api/tours` → expect `200` and an array of tours
+- `GET http://localhost:4000/api/users` → expect `200` and an array of users
 
 If these don't work, **stop and debug** before moving on.
 
@@ -412,9 +412,9 @@ If `MONGO_URI` is undefined, Mongoose will throw an error. Always check your `.e
 
 - Stop your server (if running)
 - Restart: `npm run dev`
-- Test: `GET http://localhost:4000/tours`
+- Test: `GET http://localhost:4000/api/tours`
 
-**Postman test:** `GET http://localhost:4000/tours` → should still work
+**Postman test:** `GET http://localhost:4000/api/tours` → should still work
 
 **Discuss:** Why did we need to restart the server?
 
@@ -498,7 +498,7 @@ Use Postman to test the AI integration:
 **Postman test:**
 
 - **Method**: `POST`
-- **URL**: `http://localhost:4000/ai/tour-suggestions`
+- **URL**: `http://localhost:4000/api/ai/tour-suggestions`
 - **Headers**: `Content-Type: application/json`
 - **Body** (raw JSON):
 
@@ -726,7 +726,7 @@ Key changes:
 
 **Step 3E — Test `getAllTours` with Postman**
 
-**Postman test:** `GET http://localhost:4000/tours`
+**Postman test:** `GET http://localhost:4000/api/tours`
 
 **Expected:**
 - `200` status code
@@ -800,7 +800,7 @@ Key changes:
 **Postman test:**
 
 - **Method**: `POST`
-- **URL**: `http://localhost:4000/tours`
+- **URL**: `http://localhost:4000/api/tours`
 - **Body** (raw JSON):
 
 ```json
@@ -901,15 +901,15 @@ First, create a tour (Step 3G), then copy its `_id`.
 
 **Postman test:**
 
-- `GET http://localhost:4000/tours/<paste-id-here>`
+- `GET http://localhost:4000/api/tours/<paste-id-here>`
 
 **Expected:**
 - `200` status code
 - The tour object
 
 **Also test:**
-- Invalid ID: `GET http://localhost:4000/tours/invalid-id` → `400`
-- Non-existent ID: `GET http://localhost:4000/tours/673500000000000000000000` → `404`
+- Invalid ID: `GET http://localhost:4000/api/tours/invalid-id` → `400`
+- Non-existent ID: `GET http://localhost:4000/api/tours/673500000000000000000000` → `404`
 
 **Discuss:** Why do we need to validate the ID format separately?
 
@@ -976,7 +976,7 @@ Important options:
 **Postman test:**
 
 - **Method**: `PUT`
-- **URL**: `http://localhost:4000/tours/<tour-id>`
+- **URL**: `http://localhost:4000/api/tours/<tour-id>`
 - **Body** (raw JSON):
 
 ```json
@@ -1051,9 +1051,9 @@ Key points:
 
 **Postman test:**
 
-1. `DELETE http://localhost:4000/tours/<tour-id>`
+1. `DELETE http://localhost:4000/api/tours/<tour-id>`
    - Expected: `204` status, no body
-2. `GET http://localhost:4000/tours/<same-id>`
+2. `GET http://localhost:4000/api/tours/<same-id>`
    - Expected: `404` (tour no longer exists)
 
 **Discuss:** Why does a successful DELETE return no body?
@@ -1363,7 +1363,7 @@ Run the same CRUD cycle as tours:
 
 **Postman tests:**
 
-1. **POST** `http://localhost:4000/users`
+1. **POST** `http://localhost:4000/api/users`
 
 ```json
 {
@@ -1379,9 +1379,9 @@ Run the same CRUD cycle as tours:
 }
 ```
 
-2. **GET** `http://localhost:4000/users` → see the new user
-3. **GET** `http://localhost:4000/users/<user-id>` → retrieve specific user
-4. **PUT** `http://localhost:4000/users/<user-id>` with:
+2. **GET** `http://localhost:4000/api/users` → see the new user
+3. **GET** `http://localhost:4000/api/users/<user-id>` → retrieve specific user
+4. **PUT** `http://localhost:4000/api/users/<user-id>` with:
 
 ```json
 {
@@ -1389,8 +1389,8 @@ Run the same CRUD cycle as tours:
 }
 ```
 
-5. **DELETE** `http://localhost:4000/users/<user-id>`
-6. **GET** `http://localhost:4000/users/<user-id>` → `404`
+5. **DELETE** `http://localhost:4000/api/users/<user-id>`
+6. **GET** `http://localhost:4000/api/users/<user-id>` → `404`
 
 **Discuss:** Why is the password returned in the response?
 
@@ -1556,7 +1556,7 @@ Middleware order matters:
 
 **Postman test:**
 
-- `GET http://localhost:4000/nonexistent-route`
+- `GET http://localhost:4000/api/nonexistent-route`
 
 **Expected:**
 - `404` status
@@ -1590,7 +1590,7 @@ app.get('/error', (req, res, next) => {
 
 **Postman test:**
 
-- `GET http://localhost:4000/error`
+- `GET http://localhost:4000/api/error`
 
 **Expected:**
 - `500` status
@@ -1820,9 +1820,9 @@ Common mistakes:
 
 **Postman tests:**
 
-1. `GET http://localhost:4000/tours` → should work (empty array)
-2. `POST http://localhost:4000/tours` → create a tour
-3. `GET http://localhost:4000/tours` → see the tour
+1. `GET http://localhost:4000/api/tours` → should work (empty array)
+2. `POST http://localhost:4000/api/tours` → create a tour
+3. `GET http://localhost:4000/api/tours` → see the tour
 
 **If connection fails**, check:
 - Password is correct and URL-encoded
