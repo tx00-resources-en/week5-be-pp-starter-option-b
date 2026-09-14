@@ -111,7 +111,7 @@ Before starting, ensure you have **MongoDB installed locally**:
 
 ## Instructions
 
-### Iteration 0: Setup and Verify Starter Code
+### Iteration 1: Setup and Verify Starter Code
 
 **Goal:** Get a working local server + GitHub repo so you can iterate safely.
 
@@ -241,7 +241,7 @@ Key Git commands:
 
 ---
 
-### Iteration 1: Using Environment Variables with `.env`
+### Iteration 2: Using Environment Variables with `.env`
 
 **Goal:** Move configuration (port, database URI) into environment variables for better security and flexibility.
 
@@ -427,6 +427,7 @@ Note: Some tools like `nodemon` can be configured to restart on `.env` changes, 
 
 </details>
 
+<!-- 
 ---
 
 ### Iteration 2: Configure AI Integration
@@ -528,7 +529,8 @@ If the API key is invalid, you'll get one of these errors:
 
 If successful, you should receive AI-generated tour suggestions in Markdown format.
 
-</details>
+</details> 
+-->
 
 ---
 
